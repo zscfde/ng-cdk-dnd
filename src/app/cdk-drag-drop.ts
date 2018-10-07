@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, AfterViewInit, ViewChildren , QueryList} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 /**
@@ -9,10 +9,16 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   templateUrl: 'cdk-drag-drop.html',
   styleUrls: ['cdk-drag-drop.css'],
 })
-export class CdkDragDropComponent {
+export class CdkDragDropComponent implements AfterViewInit {
+  @ViewChildren('rowDropZone') rowDropZone: QueryList<any>;
+  rowDropZoneArr: Array<any>;
   row0 = [{ id: '1', row: 0, column: 0 }, { id: '2', row: 0, column: 1 }];
   row1 = [{ id: '3', row: 1, column: 0 }];
   rows = [this.row0, this.row1];
+
+  ngAfterViewInit() {
+    this.rowDropZoneArr = this.rowDropZone.toArray();
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

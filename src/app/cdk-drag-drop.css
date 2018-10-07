@@ -5,8 +5,16 @@
 }
 
 .rowDropzone {
-  display: flex;
-  border: 1px solid pink;
+    width: 95%;
+    display: flex;
+    border: 1px solid pink;
+}
+
+.dropboxRow {
+    display: flex;
+    /* margin: 5%; */
+    width: 100%;
+    border: 1px solid black;
 }
 
 .dropbox {
