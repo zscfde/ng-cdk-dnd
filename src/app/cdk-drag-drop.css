@@ -1,0 +1,18 @@
+.edit-place {
+    display: block;
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+.rowDropzone {
+  display: flex;
+  border: 1px solid pink;
+}
+
+.dropbox {
+    display: flex;
+    margin: 5%;
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
+}
